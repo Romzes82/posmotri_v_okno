@@ -9,6 +9,7 @@ html {
 }
 
 .page {
+  display: flex; /* чтоб устранить выпадением полей content */
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -16,6 +17,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+
+  padding: 133px 30px;
+
 }
 
 h1,
@@ -36,3 +40,124 @@ ul,
 ol {
   list-style: none;
 }
+
+.content {
+  /* inline-size: 1140px;
+  block-size: 534px; */
+  display: grid;
+  grid-template-columns: 1.78fr 1fr;
+  gap: 30px;
+  justify-content: space-between;
+  /* max-height: 534px; */
+  max-block-size: 534px;
+  /* padding-bottom: 56.25%; */
+  /* justify-items: center; */
+  /* align-items: end; */
+}
+
+
+.content__details {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+      overflow: auto;
+    /* overflow-x: hidden; */
+}
+
+.result {
+  
+  /* max-block-size: 100%;
+  align-self: flex-end;
+  align-self: end; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  
+}
+
+.search-form { 
+  display: flex;
+  gap: 40px;
+  /* flex-grow: 1 */
+ }
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+.search-form__textfield {
+
+  min-width: 225px;
+  flex-grow: 1
+
+}
+
+.search-form__fieldset-title {
+  display: flex;
+  align-items: flex-start;
+  /* gap: 5px; */
+  color: #FFF;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* заставить браузер «забыть» стандартные стили этого элемента */
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+} 
+
+.search-form__textfield {
+
+  background-color: transparent;
+  border: none;
+  font-family: inherit; 
+  color: inherit;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+.insearch-form__textfield::placeholder {
+  font-family: inherit; 
+  color: inherit;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+/* .result__video-container {
+  width: 100%;
+  height: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  object-position: center;
+} */
