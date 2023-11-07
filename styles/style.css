@@ -14,13 +14,12 @@ html {
   align-items: center;
   inline-size: 1200px;
   block-size: 100%;
-  margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 
-  /* padding: 133px 30px; */
+  padding: 0 30px; 
 
 }
 
@@ -54,10 +53,14 @@ ol {
 } 
 
 .content {
-  display: flex;
+  /* display: flex;
   gap: 30px;
   margin: 0 30px;
-  inline-size: 100%;
+  inline-size: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
 }
 
 .result {
@@ -99,16 +102,16 @@ ol {
   min-inline-size: 212px;
  }
 
- .search-form__textfield {
+ /* .search-form__textfield {
   min-inline-size: 225px;
-  
- }
+ } */
 
  /* 2.1. Задать размеры контейнеру .result__video-container и добавить отступ снизу. */
 
 .result__video-container {
   position: relative; /* для позиционирования прелоадера */
   inline-size: 711px;
+  block-size: 386px;
 }
  
  /* 2.2. Замостить видео в этот контейнер так, чтобы оно занимало всю ширину и высоту и не выходило за пределы. */
@@ -195,6 +198,23 @@ ol {
   inline-size: 100%;
 }
 
+/* .search-form__fieldset:nth-of-type(1n+1) */
+
+/* .search-form__fieldset:nth-child(1) {
+  background-color: brown;
+
+  border-inline-start: none;
+  border-inline-end: none;
+  border-block-start: none;
+  border-block-end: 1px solid #FFF;  
+} */
+
+.search-form__fieldset:focus {
+  outline: 2px solid #FFF;
+  outline-offset: 2px;
+}
+
+
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
@@ -202,10 +222,7 @@ ol {
   border: none;
   inline-size: 100%;
 
-  border-inline-start: none;
-  border-inline-end: none;
-  border-block-start: none;
-  border-block-end: 1px solid #FFF;
+
 
   /* border-top: 1px solid #FFF;
   border-right: none;
@@ -217,6 +234,7 @@ ol {
   font-weight: inherit;
   font-size: inherit;
   background-color: transparent;
+  appearance: none;
   /* inline-size: 225px; */
 }
 
@@ -231,10 +249,12 @@ ol {
   font-weight: 400;
   line-height: normal;
   /* text-underline-offset: 4px; */
-  border-inline-start: none;
+  /* border-inline-start: none;
   border-inline-end: none;
   border-block-start: none;
-  border-block-end: 1px solid #FFF;
+  border-block-end: 1px solid #FFF; */
+  
+
 }
 
 .content__details {
@@ -279,11 +299,15 @@ input:focus {
 }  */
 
 .search-form__textfield {
+  /* border-inline-start: 1px solid #FFF; 
+  border-inline-end: none;
+  border-block-start: none;
+  border-block-end: 1px solid #FFF;  */
 
   background-color: transparent;
   border: none;
   font-family: inherit; 
-  color: inherit;
+  /* color: inherit; */
   color: rgba(255, 255, 255, 0.70);
   font-family: Fira Sans Condensed;
   font-size: 18px;
@@ -291,6 +315,18 @@ input:focus {
   font-weight: 400;
   line-height: normal;
   inline-size: 225px;
+
+  border-block-start: 1px solid #FFF;
+  border-inline-end: none;
+  border-bottom: 1px solid #FFF;
+  border-inline-start: none;
+  padding: 2px 0;
+  color: currentColor;
+  /* font-family: inherit; */
+  /* font-weight: inherit; */
+  /* font-size: inherit; */
+  /* background-color: transparent; */
+  /* inline-size: 225px; */
   
 }
 
@@ -304,3 +340,8 @@ input:focus {
   line-height: inherit;
 }
 
+h1::last-letter {
+  /* background-color: yellow; */
+  color: rgb(223, 30, 30);
+  font-weight: 400;
+}
