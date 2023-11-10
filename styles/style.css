@@ -58,25 +58,31 @@ ol {
   margin: 0 30px;
   inline-size: 100%; */
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  /* justify-content: center; */
+  align-items: end;
+  inline-size: 1140px;
   gap: 30px;
+  /* padding-bottom: 3px; */
 }
 
 .result {
   /* margin-top: auto; */
+  max-inline-size: 711px;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
   gap: 11px;
+
 }
 
 .search-form { 
   display: flex;
   gap: 40px;
-  align-items: center;
+  /* align-items: center; */
+  max-inline-size: 711px;
   justify-content: start;
-  /* flex-grow: 1 */
+  /* flex-grow: 1; */
+  padding-bottom: 2px;
  }
 
  .button.search-form__submit-button {
@@ -98,9 +104,9 @@ ol {
   border: 1px solid #FFF;
  }
 
- .search-form__checkbox-list {
-  min-inline-size: 212px;
- }
+ /* .search-form__checkbox-list {
+   max-inline-size: 212px; 
+ } */
 
  /* .search-form__textfield {
   min-inline-size: 225px;
@@ -110,7 +116,7 @@ ol {
 
 .result__video-container {
   position: relative; /* для позиционирования прелоадера */
-  /* inline-size: 711px; */
+  inline-size: 711px;
   block-size: 386px;
 }
  
@@ -124,7 +130,15 @@ ol {
 
 
 .content__video-card-thumbnail {
-  max-inline-size: 194px;
+  flex-shrink: 0;
+    width: 194px;
+    height: 103px;
+    object-fit: cover;
+    object-position: center;
+
+  /* max-inline-size: 194px;
+	max-block-size: 103px; */
+
   /* inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
@@ -158,8 +172,9 @@ ol {
 .content__video-card {
   display: flex;
   justify-content: space-between;
+  align-items: start;
   padding: 2px;
-  inline-size: 394px;
+  /* inline-size: 394px; */
 }
 
 
@@ -168,6 +183,8 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex-grow: 1;
+  padding-top: 1px;
 }
 
 .content__video-card-title {
@@ -192,8 +209,10 @@ ol {
 
 
 .button.more-button {
-  inline-size: 100%;
-  block-size: 100%;
+  inline-size: 395px ;
+  /* block-size: 100%; */
+  margin-block-end: 2px;
+  margin-inline-start: 2px;
 }
 
 /* .search-form__fieldset:nth-of-type(1n+1) */
@@ -209,7 +228,7 @@ ol {
 
 .search-form__fieldset:focus {
   outline: 2px solid #FFF;
-  outline-offset: 2px;
+  /* outline-offset: 2px; */
 }
 
 
@@ -233,7 +252,7 @@ ol {
   font-size: inherit;
   background-color: transparent;
   appearance: none;
-  /* inline-size: 225px; */
+  inline-size: 225px;
 }
 
 .search-form__fieldset-title {
@@ -256,11 +275,13 @@ ol {
 }
 
 .content__details {
-  width: 399px;
+  /* width: 399px; */
+  /* inline-size: 100%; */
+  max-inline-size: 399px;
   display: flex;
   flex-direction: column;
-  gap: 21px;
-  justify-content: space-between;
+  gap: 26px;
+  /* justify-content: space-between; */
   /* align-items: end; */
 }
 
@@ -271,7 +292,7 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 0 2px 2px 2px; /* для возможности обводки широкой кнопки при :focuc-visible */
+ /* padding: 0 2px 2px 2px; /* для возможности обводки широкой кнопки при :focuc-visible */
 }
 
 /* scrollbar-width removes scrollbar, but only works in Firefox */
@@ -325,7 +346,7 @@ button:focus,
   /* border-inline-end: none;*/  /* есть уже border: none; */
   border-block-end: 1px solid #FFF;
   /* border-inline-start: none; */
-  padding: 2px 0;
+  /* padding: 2px 0; */   /*  ??????????? */
   color: currentColor;
   /* font-family: inherit; */
   /* font-weight: inherit; */
@@ -353,12 +374,11 @@ h1::last-letter {
 
 /* создадим псевдо-чекбоксы */
 
-input[type='checkbox'] + .search-form__pseudo-checkbox {
+.search-form__pseudo-checkbox {
   border: 1px solid #FFF;
   width: 19px;
   height: 19px;
   display: block;
-  
   /* margin: 1px 0 1px 1px; */
 }
 
@@ -368,7 +388,7 @@ input[type='checkbox'] + .search-form__pseudo-checkbox {
   gap: 5px;
   justify-content: center;
   align-items: center;
-  padding: 0 1px 0 1px; 
+  /* padding: 0 1px 0 1px;  */
 }
 
 .search-form__checkbox-list {
@@ -457,14 +477,35 @@ input[type='checkbox']:hover + span {
 }
 
 
-input[type='checkbox']:checked + .search-form__pseudo-checkbox {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+    display: block;
     outline: 2px solid #000;
     outline-offset: -3px;  
     background: #fff;
 }
 
-.search-form__pseudo-checkbox:active {
+.search-form__checkbox:active + .search-form__label-text {
+   text-decoration: none;
+}
+
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+/* .search-form__checkbox:active + .search-form__pseudo-checkbox {
+    display: block;
     outline: 2px solid #000;
     outline-offset: -3px;  
     background: #fff;
-}
+} */
+
+/* .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  background-color: #FFF;
+  inline-size: 15px;
+  block-size: 15px;
+  margin: 1px 0 0 1px;
+} */
