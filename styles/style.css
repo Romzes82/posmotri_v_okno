@@ -280,7 +280,7 @@ ol {
   max-inline-size: 399px;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 24px; /* по макету 26px; но 24px ложится идеально в pixel perfect */
   /* justify-content: space-between; */
   /* align-items: end; */
 }
@@ -291,7 +291,7 @@ ol {
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px; /* по макету 30px; но 25 ложится идеально в pixel perfect */
  /* padding: 0 2px 2px 2px; /* для возможности обводки широкой кнопки при :focuc-visible */
 }
 
