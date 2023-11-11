@@ -86,7 +86,6 @@ ol {
  .button.search-form__submit-button {
   align-self: self-end;
   min-inline-size: 194px;
-
  }
 
  .button.more-button {
@@ -109,8 +108,8 @@ ol {
 
 .content__video-card-thumbnail {
   flex-shrink: 0;
-    width: 194px;
-    height: 103px;
+    inline-size: 194px;
+    block-size: 103px;
     object-fit: cover;
     object-position: center;
 }
@@ -218,13 +217,13 @@ ol {
   padding: 2px 0 0 2px; /* для возможности увидеть рамку вокруг кнопки .item */
 }
 
-/* Удаление скролбара */
+/* Удаление скроллбара */
 /* https://caniuse.com/?search=webkit-scrollbar */
 .content__list::-webkit-scrollbar {
   display: none;
 }
 
-/* scrollbar-width удаляет скрол только в Firefox */
+/* scrollbar-width удаляет скролл только в Firefox */
 /* https://caniuse.com/?search=scrollbar-width */
 .content__list {
   position: relative; /* для позиционирования прелоадера */
@@ -236,14 +235,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-
-
-    /* inline-size: 100%; */
-    /* block-size: 100%; */
-    /* object-fit: cover; */
-    /* object-position: center; */
-
-  
 }
 
 
@@ -254,16 +245,7 @@ button:focus,
   outline: none;
 }
 
-/* заставить браузер «забыть» стандартные стили этого элемента */
-/* .select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-   appearance: none; 
-
-}  */
-
 .search-form__textfield {
-
   background-color: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.70);
@@ -285,7 +267,7 @@ button:focus,
   line-height: inherit;
 }
 
-/* оказывается при клике на инпут будет появляться :focus-visible. https://github.com/WICG/focus-visible/issues/131 */
+/* оказывается при клике на инпут будет состояние и :focus-visible. https://github.com/WICG/focus-visible/issues/131 */
 .search-form__textfield:active  {
   /* outline: 0;  */
   border-block-start: 1px solid transparent;
@@ -299,8 +281,8 @@ button:focus,
 
 .search-form__pseudo-checkbox {
   border: 1px solid #FFF;
-  width: 19px;
-  height: 19px;
+  inline-size: 19px;
+  block-size: 19px;
   display: block;
 }
 
@@ -330,14 +312,15 @@ button:focus,
 
 /* состояние :focus-visible */
 
-.search-form__label:has(:focus-visible)  {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #FFF;
   outline-offset: 1px;
 }
 
 .button:focus-visible {
-  outline: 1px solid #fff; 
+  outline: 1px solid #fff;  
   outline-offset: 1px;
+  /* outline-style: double; */
 }
 
 .content__card-link:focus-visible {
@@ -383,4 +366,3 @@ button:focus,
   background-color: #545050;
   text-decoration: none;
 }
-
