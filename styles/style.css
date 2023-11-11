@@ -53,36 +53,25 @@ ol {
 } 
 
 .content {
-  /* display: flex;
-  gap: 30px;
-  margin: 0 30px;
-  inline-size: 100%; */
   display: flex;
-  /* justify-content: center; */
   align-items: end;
   inline-size: 1140px;
   gap: 30px;
-  /* padding-bottom: 3px; */
 }
 
 .result {
-  /* margin-top: auto; */
   max-inline-size: 711px;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
   gap: 16px;
-  padding-bottom: 1px; /* чтоб компенсировать padding в .button.more-button */
 }
 
 .search-form { 
   display: flex;
   gap: 40px;
-  /* align-items: center; */
   max-inline-size: 711px;
   justify-content: start;
-  /* flex-grow: 1; */
-  /* padding-bottom: 2px; */
  }
 
  .button {
@@ -103,19 +92,8 @@ ol {
  }
 
  .button.more-button {
-  /* min-inline-size: 100% ; */
   min-inline-size: 399px ;
 }
-
- /* .search-form__checkbox-list {
-   max-inline-size: 212px; 
- } */
-
- /* .search-form__textfield {
-  min-inline-size: 225px;
- } */
-
- /* 2.1. Задать размеры контейнеру .result__video-container и добавить отступ снизу. */
 
 .result__video-container {
   position: relative; /* для позиционирования прелоадера */
@@ -123,8 +101,7 @@ ol {
   block-size: 386px;
 }
  
- /* 2.2. Замостить видео в этот контейнер так, чтобы оно занимало всю ширину и высоту и не выходило за пределы. */
- .result__video {
+.result__video {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
@@ -138,29 +115,18 @@ ol {
     height: 103px;
     object-fit: cover;
     object-position: center;
-
-  /* max-inline-size: 194px;
-	max-block-size: 103px; */
-
-  /* inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  object-position: center; */
 }
 
 .title {
-  /* display: flex;
-  flex-direction: column; */
   color: #FFF;
   font-family: Oswald;
   font-size: 75px;
-  font-style: normal;
   font-weight: 700;
   line-height: 0.94;
   text-transform: uppercase;
   max-block-size: 210px;
   max-inline-size: 260px; 
-  }
+ }
 
 .content__accent {
   font-family: Oswald;
@@ -176,11 +142,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  /* padding: 2px; */
-  /* inline-size: 394px; */
 }
-
-
 
 .content__video-card-description-container {
   display: flex;
@@ -204,26 +166,12 @@ ol {
 .content__video-card-description{
   color: #FFF;
   font-family: inherit;
-  /* font-family: Fira Sans Condensed; */
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 0.9;
 }
 
-
-
-
-/* .search-form__fieldset:nth-of-type(1n+1) */
-
-/* .search-form__fieldset:nth-child(1) {
-  background-color: brown;
-
-  border-inline-start: none;
-  border-inline-end: none;
-  border-block-start: none;
-  border-block-end: 1px solid #FFF;  
-} */
 
 .search-form__fieldset:focus {
   outline: 2px solid #FFF;
@@ -286,7 +234,7 @@ ol {
 
 .content__list-item {
   inline-size: 398px;
-  padding: 0 2px 2px 2px; /* для возможности увидеть рамку вокруг кнопки .more-button */
+  padding: 2px; /* для возможности увидеть рамку вокруг кнопки .more-button */
 }
 
 /* Удаление скролбара */
@@ -301,8 +249,8 @@ ol {
   position: relative; /* для позиционирования прелоадера */
   /* overflow-y: scroll; */
   overflow-y: auto;
-  padding: 2px;
-  max-block-size: 298px;
+  /* padding: 2px; */
+  block-size: 298px;
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
@@ -397,17 +345,6 @@ h1::last-letter {
   gap: 15px;
 }
 
-/* input[type="checkbox"]:disabled {} выключённый
-input[type="checkbox"]:checked {} выбранный
-input[type="checkbox"]:focus-visible {} в фокусе 
-
-input[type='checkbox']:checked + span {
-}
-
-input[type='checkbox']:hover + span {
-} */
-
-
 .content__card-link {
   display: block;
   text-decoration: none;  
@@ -435,26 +372,8 @@ input[type='checkbox']:hover + span {
 
 .content__card-link:focus-visible {
     outline: 1px solid #FFF;
-    background-color: #545050;
+    /* background-color: #545050; */
 }
-
-
-
-
-/* input[type='checkbox']:focus-visible + .search-form__label {
-  border: 1px solid #FFF;
-} */
-
-/* .button.search-form__submit-button:has(:focus-visible) {
-  outline: 5px solid rgba(7, 241, 15, 0.5);
-  background-color: red;
-} */
-
-/* состояние :hover */
-
-/* .search-form__label:has(:hover)  {
-  не нужен
-} */
 
 .search-form__label-text:hover, 
 .button:hover, 
@@ -470,10 +389,7 @@ input[type='checkbox']:hover + span {
   border-block-start: 1px solid transparent;
   border-block-end: 1px solid transparent;
   outline-offset: 1px;
-  
-  /* padding: 3px; */
 }
-
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
     display: block;
@@ -492,18 +408,3 @@ input[type='checkbox']:hover + span {
   text-decoration: none;
 }
 
-/* .search-form__checkbox:active + .search-form__pseudo-checkbox {
-    display: block;
-    outline: 2px solid #000;
-    outline-offset: -3px;  
-    background: #fff;
-} */
-
-/* .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  content: '';
-  display: block;
-  background-color: #FFF;
-  inline-size: 15px;
-  block-size: 15px;
-  margin: 1px 0 0 1px;
-} */
