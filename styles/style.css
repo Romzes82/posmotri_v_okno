@@ -286,7 +286,7 @@ ol {
 
 .content__list-item {
   inline-size: 398px;
-  padding: 2px;
+  padding: 0 2px 2px 2px; /* для возможности увидеть рамку вокруг кнопки .more-button */
 }
 
 /* Удаление скролбара */
