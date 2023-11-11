@@ -102,6 +102,7 @@ ol {
   line-height: normal;
   background-color: transparent;
   border: 1px solid #FFF;
+  
  }
 
  /* .search-form__checkbox-list {
@@ -173,7 +174,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  padding: 2px;
+  /* padding: 2px; */
   /* inline-size: 394px; */
 }
 
@@ -195,12 +196,13 @@ ol {
   font-weight: 700;
   line-height: 1; 
   text-transform: uppercase;
-  min-inline-size: 200px;
+  /* min-inline-size: 200px; */
 }
 
 .content__video-card-description{
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: inherit;
+  /* font-family: Fira Sans Condensed; */
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -211,8 +213,8 @@ ol {
 .button.more-button {
   inline-size: 395px ;
   /* block-size: 100%; */
-  margin-block-end: 2px;
-  margin-inline-start: 2px;
+  /* margin-block-end: 2px;
+  margin-inline-start: 2px; */
 }
 
 /* .search-form__fieldset:nth-of-type(1n+1) */
@@ -275,25 +277,17 @@ ol {
 }
 
 .content__details {
-  /* width: 399px; */
-  /* inline-size: 100%; */
   max-inline-size: 399px;
   display: flex;
   flex-direction: column;
   gap: 26px; /* по макету 26px; но 24px ложится идеально в pixel perfect */
-  /* justify-content: space-between; */
-  /* align-items: end; */
+  align-items: start; /* чтоб не прыгал маленький прелоадер в .content__list*/
 }
 
 
 /* 2.3 Создать вертикальные отступы между элементами .content__list-item (у всех, кроме последнего). */
 
-.content__list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; /* по макету 30px; но 25 ложится идеально в pixel perfect */
- /* padding: 0 2px 2px 2px; /* для возможности обводки широкой кнопки при :focuc-visible */
-}
+
 
 /* scrollbar-width removes scrollbar, but only works in Firefox */
 /* https://caniuse.com/?search=scrollbar-width */
@@ -302,6 +296,17 @@ ol {
   overflow-y: scroll;
   block-size: 298px;
   scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+
+    /* inline-size: 100%; */
+    /* block-size: 100%; */
+    /* object-fit: cover; */
+    /* object-position: center; */
+
+  
 }
 
 /* Removes scrollbar for most other browsers */
@@ -325,34 +330,22 @@ button:focus,
 }  */
 
 .search-form__textfield {
-  /* border-inline-start: 1px solid #FFF; 
-  border-inline-end: none;
-  border-block-start: none;
-  border-block-end: 1px solid #FFF;  */
 
   background-color: transparent;
   border: none;
-  font-family: inherit; 
+
   /* color: inherit; */
   color: rgba(255, 255, 255, 0.70);
   font-family: Fira Sans Condensed;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
   inline-size: 225px;
 
   border-block-start: 1px solid #FFF;
-  /* border-inline-end: none;*/  /* есть уже border: none; */
   border-block-end: 1px solid #FFF;
-  /* border-inline-start: none; */
-  /* padding: 2px 0; */   /*  ??????????? */
-  color: currentColor;
-  /* font-family: inherit; */
-  /* font-weight: inherit; */
-  /* font-size: inherit; */
-  /* background-color: transparent; */
-  /* inline-size: 225px; */
+  /* color: currentColor; */
+
   
 }
 
