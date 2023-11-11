@@ -93,6 +93,7 @@ ol {
 
  .button.more-button {
   min-inline-size: 399px ;
+  margin: 0 2px 2px 2px; /*если делать через padding в .content__list, то прыгает маленький прелоадер */
 }
 
 .result__video-container {
@@ -229,6 +230,7 @@ ol {
   /* чтоб не прыгал маленький прелоадер в .content__list*/
   align-items: start; 
   justify-content: end;
+  flex-grow: 1;
 }
 
 
@@ -249,7 +251,7 @@ ol {
   position: relative; /* для позиционирования прелоадера */
   /* overflow-y: scroll; */
   overflow-y: auto;
-  /* padding: 2px; */
+  /* padding: 2px 0 2px 0; */
   block-size: 298px;
   scrollbar-width: none;
   display: flex;
