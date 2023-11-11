@@ -82,7 +82,7 @@ ol {
   max-inline-size: 711px;
   justify-content: start;
   /* flex-grow: 1; */
-  padding-bottom: 2px;
+  /* padding-bottom: 2px; */
  }
 
  .button.search-form__submit-button {
