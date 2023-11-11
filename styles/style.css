@@ -217,14 +217,7 @@ ol {
   padding: 2px 0 0 2px; /* для возможности увидеть рамку вокруг кнопки .item */
 }
 
-/* Удаление скроллбара */
-/* https://caniuse.com/?search=webkit-scrollbar */
-.content__list::-webkit-scrollbar {
-  display: none;
-}
-
 /* scrollbar-width удаляет скролл только в Firefox */
-/* https://caniuse.com/?search=scrollbar-width */
 .content__list {
   position: relative; /* для позиционирования прелоадера */
   /* overflow-y: scroll; */
@@ -237,7 +230,11 @@ ol {
   gap: 30px;
 }
 
-
+/* Удаление скроллбара в остальных браузерах */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+.content__list::-webkit-scrollbar {
+  display: none;
+}
 
 input:focus, 
 button:focus,
