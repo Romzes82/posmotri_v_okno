@@ -85,25 +85,27 @@ ol {
   /* padding-bottom: 2px; */
  }
 
- .button.search-form__submit-button {
-  align-self: self-end;
-  min-inline-size: 194px;
-
- }
-
  .button {
   min-block-size: 34px;
   color: #FFF;
   text-align: center;
   font-family: Fira Sans Condensed;
   font-size: 18px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   background-color: transparent;
   border: 1px solid #FFF;
-  
  }
+
+ .button.search-form__submit-button {
+  align-self: self-end;
+  min-inline-size: 194px;
+
+ }
+
+ .button.more-button {
+  /* min-inline-size: 100% ; */
+  min-inline-size: 399px ;
+}
 
  /* .search-form__checkbox-list {
    max-inline-size: 212px; 
@@ -196,7 +198,7 @@ ol {
   font-weight: 700;
   line-height: 1; 
   text-transform: uppercase;
-  /* min-inline-size: 200px; */
+  min-inline-size: 200px;
 }
 
 .content__video-card-description{
@@ -210,12 +212,7 @@ ol {
 }
 
 
-.button.more-button {
-  inline-size: 395px ;
-  /* block-size: 100%; */
-  /* margin-block-end: 2px;
-  margin-inline-start: 2px; */
-}
+
 
 /* .search-form__fieldset:nth-of-type(1n+1) */
 
@@ -281,20 +278,31 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 26px; /* по макету 26px; но 24px ложится идеально в pixel perfect */
-  align-items: start; /* чтоб не прыгал маленький прелоадер в .content__list*/
+  /* чтоб не прыгал маленький прелоадер в .content__list*/
+  align-items: start; 
+  justify-content: end;
 }
 
 
-/* 2.3 Создать вертикальные отступы между элементами .content__list-item (у всех, кроме последнего). */
+.content__list-item {
+  inline-size: 398px;
+  padding: 2px;
+}
 
+/* Удаление скролбара */
+/* https://caniuse.com/?search=webkit-scrollbar */
+.content__list::-webkit-scrollbar {
+  display: none;
+}
 
-
-/* scrollbar-width removes scrollbar, but only works in Firefox */
+/* scrollbar-width удаляет скрол только в Firefox */
 /* https://caniuse.com/?search=scrollbar-width */
 .content__list {
   position: relative; /* для позиционирования прелоадера */
-  overflow-y: scroll;
-  block-size: 298px;
+  /* overflow-y: scroll; */
+  overflow-y: auto;
+  padding: 2px;
+  max-block-size: 298px;
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
@@ -309,11 +317,7 @@ ol {
   
 }
 
-/* Removes scrollbar for most other browsers */
-/* https://caniuse.com/?search=webkit-scrollbar */
-.content__list::-webkit-scrollbar {
-  display: none;
-}
+
 
 input:focus, 
 button:focus,
@@ -407,8 +411,8 @@ input[type='checkbox']:hover + span {
 .content__card-link {
   display: block;
   text-decoration: none;  
-  margin: 2px;
-  overflow: hidden;
+  /* margin: 2px; */
+  /* overflow: hidden; */
 }
 
 .content__card-link_current {
@@ -420,11 +424,12 @@ input[type='checkbox']:hover + span {
 
 .search-form__label:has(:focus-visible)  {
   outline: 1px solid #FFF;
-  outline-offset: 2px
+  outline-offset: 1px;
 }
 
 .button:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid #fff; 
+  
   outline-offset: 1px;
 }
 
