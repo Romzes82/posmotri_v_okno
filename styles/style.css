@@ -9,7 +9,7 @@ html {
 }
 
 .page {
-  display: flex; /* чтоб устранить выпадение полей content */
+  display: flex; 
   margin: auto;
   align-items: center;
   inline-size: 1200px;
@@ -18,9 +18,7 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-
   padding: 0 30px; 
-
 }
 
 h1,
@@ -93,7 +91,7 @@ ol {
 
  .button.more-button {
   min-inline-size: 399px ;
-  margin: 0 2px 2px 2px; /*если делать через padding в .content__list, то прыгает маленький прелоадер */
+  margin: 0 2px 2px 2px; /*если делать через padding в .content__list, то прыгает маленький прелоадер при загрузке/поиске */
 }
 
 .result__video-container {
@@ -108,7 +106,6 @@ ol {
   object-fit: cover;
   object-position: center;
 }
-
 
 .content__video-card-thumbnail {
   flex-shrink: 0;
@@ -173,10 +170,8 @@ ol {
   line-height: 0.9;
 }
 
-
 .search-form__fieldset:focus {
   outline: 2px solid #FFF;
-  /* outline-offset: 2px; */
 }
 
 
@@ -186,13 +181,6 @@ ol {
   gap: 5px;
   border: none;
   inline-size: 100%;
-
-
-
-  /* border-top: 1px solid #FFF;
-  border-right: none;
-  border-bottom: 1px solid #FFF;
-  border-left: none; */
   padding: 2px 0;
   color: currentColor;
   font-family: inherit;
@@ -206,37 +194,28 @@ ol {
 .search-form__fieldset-title {
   display: flex;
   align-items: flex-start;
-  /* gap: 5px; */
   color: #FFF;
   font-family: Fira Sans Condensed;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  /* text-underline-offset: 4px; */
-  /* border-inline-start: none;
-  border-inline-end: none;
-  border-block-start: none;
-  border-block-end: 1px solid #FFF; */
-  
-
 }
 
 .content__details {
   max-inline-size: 399px;
   display: flex;
   flex-direction: column;
-  gap: 26px; /* по макету 26px; но 24px ложится идеально в pixel perfect */
-  /* чтоб не прыгал маленький прелоадер в .content__list*/
+  gap: 26px; 
   align-items: start; 
   justify-content: end;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 
 .content__list-item {
   inline-size: 398px;
-  padding: 2px; /* для возможности увидеть рамку вокруг кнопки .more-button */
+  padding: 2px 0 0 2px; /* для возможности увидеть рамку вокруг кнопки .item */
 }
 
 /* Удаление скролбара */
