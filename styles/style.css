@@ -215,7 +215,7 @@ ol {
 
 .content__list-item {
   inline-size: 398px;
-  padding: 2px 0 0 2px; /* для возможности увидеть рамку вокруг кнопки .item */
+  padding: 2px 0 30px 2px; /* для возможности увидеть рамку вокруг кнопки .content__list-item */
 }
 
 /* scrollbar-width удаляет скролл только в Firefox */
@@ -228,7 +228,7 @@ ol {
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  /* gap: 30px; */
 }
 
 /* Удаление скроллбара в остальных браузерах */
