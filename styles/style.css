@@ -170,11 +170,6 @@ ol {
   line-height: 0.9;
 }
 
-.search-form__fieldset:focus {
-  outline: 2px solid #FFF;
-}
-
-
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
@@ -218,27 +213,18 @@ ol {
   padding: 2px 0 30px 2px; /* для возможности увидеть рамку вокруг кнопки .content__list-item */
 }
 
-/* scrollbar-width удаляет скролл только в Firefox */
 .content__list {
   position: relative; /* для позиционирования прелоадера */
-  /* overflow-y: scroll; */
   overflow-y: auto;
-  /* padding: 2px 0 2px 0; */
   block-size: 298px;
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
-  /* gap: 30px; */
 }
 
-/* Удаление скроллбара в остальных браузерах */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
-.content__list::-webkit-scrollbar {
-  display: none;
-}
-
-input:focus, 
-button:focus,
+/* input:focus,  */
+.search-form__textfield:focus,
+.button:focus,
 .content__card-link:focus {
   outline: none;
 }
@@ -246,7 +232,7 @@ button:focus,
 .search-form__textfield {
   background-color: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.70);
+  color: #fff;
   font-family: Fira Sans Condensed;
   font-size: 18px;
   font-weight: 400;
@@ -273,9 +259,9 @@ button:focus,
   /* outline-offset: 1px; */
 }
 
-.search-form__textfield:has(:focus-visible) {
+/* .search-form__textfield:has(:focus-visible) {
   outline: 1px solid #fff;
-}
+} */
 
 .search-form__pseudo-checkbox {
   border: 1px solid #FFF;
