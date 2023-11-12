@@ -90,7 +90,8 @@ ol {
 
  .button.more-button {
   min-inline-size: 399px ;
-  margin: 0 2px 2px 2px; /*если делать через padding в .content__list, то прыгает маленький прелоадер при загрузке/поиске */
+  /*чтоб можно было увидеть outline вокруг border при :focus-visible. Если делать через padding в .content__list, то прыгает маленький прелоадер при загрузке/поиске*/
+  margin: 0 2px 2px 2px; 
 }
 
 .result__video-container {
