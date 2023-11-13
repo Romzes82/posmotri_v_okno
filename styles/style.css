@@ -89,9 +89,9 @@ ol {
  }
 
  .button.more-button {
-  min-inline-size: 399px ;
-  /*чтоб можно было увидеть outline вокруг border при :focus-visible. Если делать через padding в .content__list, то прыгает маленький прелоадер при загрузке/поиске*/
-  margin: 0 2px 2px 2px; 
+  min-inline-size: 397px ;
+  /*чтоб можно было увидеть outline вокруг border при :focus-visible.*/
+  margin: 0 0 2px 2px; 
 }
 
 .result__video-container {
@@ -210,17 +210,22 @@ ol {
 
 .content__list-item {
   inline-size: 398px;
-  padding: 2px 0 0 2px; /* для возможности увидеть рамку вокруг кнопки .content__list-item */
+  padding: 2px 1px 0 2px; /* для возможности увидеть рамку вокруг кнопки .content__list-item */
 }
 
 .content__list-item:not(:last-child) {
   padding-bottom: 30px;
 }
 
+.content__list-item:last-child {
+  padding-bottom: 2px; /* для того, чтоб увидеть рамку снизу последней карточки-города из списка */
+}
+
 .content__list {
   position: relative; /* для позиционирования прелоадера */
   overflow-y: auto;
   block-size: 298px;
+  /* min-inline-size: 399px ; */
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
